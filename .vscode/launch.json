@@ -1,0 +1,30 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run pipeline with config",
+      "type": "python",
+      "request": "launch",
+      "module": "smart_evidence.flows.run_pipeline",
+      "args": ["--config-path=${relativeFile}"],
+      "justMyCode": true
+    },
+    {
+      "name": "Test annotate flow components",
+      "type": "python",
+      "request": "launch",
+      "module": "tests.components.test_annotate_flow_components",
+      "justMyCode": true
+    },
+    {
+      "name": "Test annotate flow",
+      "type": "python",
+      "request": "launch",
+      "module": "tests.flows.test_annotate_insights_flow",
+      "justMyCode": true
+    }
+  ]
+}
