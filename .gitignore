@@ -17,6 +17,7 @@ data/assets/keywords_clean/
 datasets/
 results/
 /models/
+Services/DVC/perturbation_test_venv/
 
 # pyenv
 .python-version
