@@ -10325,3 +10325,54 @@ Traceback (most recent call last):
     upload_logs_to_gcs(local_log_path, "logs_impactnexus", "incoming_data_deepcheck/incoming_data_deepcheck.log")
 TypeError: upload_logs_to_gcs() missing 1 required positional argument: 'remote_log_path': Did you fail to use functools.wraps() in a decorator?
 2023-12-11 07:12:28 - ERROR - Internal Server Error: /api/deepcheck/deepcheck
+2023-12-12 07:48:53 - ERROR - Failed to import 'selenium'. Run 'pip install farm-haystack[crawler]'. Original error: No module named 'selenium'
+Traceback (most recent call last):
+  File "/Users/ousheshharadhun/Documents/Workspace/Impact_Nexus_AI/Impact_Nexus_Template/nlp_vevn/lib/python3.10/site-packages/haystack/nodes/connector/crawler.py", line 17, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ousheshharadhun/Documents/Workspace/Impact_Nexus_AI/Impact_Nexus_Template/nlp_vevn/lib/python3.10/site-packages/ninja/operation.py", line 104, in run
+    result = self.view_func(request, **values)
+  File "/Users/ousheshharadhun/Documents/Workspace/Impact_Nexus_AI/Impact_Nexus_Template/Services/services_app/api/routers/haystack_crawler.py", line 88, in haystack_crawler
+    crawler = HaystackCrawler.build_crawler(urls, crawler_depth=crawler_depth, output_dir=output_dir)
+  File "/Users/ousheshharadhun/Documents/Workspace/Impact_Nexus_AI/Impact_Nexus_Template/Services/services_app/api/routers/haystack_crawler.py", line 51, in build_crawler
+    return Crawler(urls, crawler_depth, output_dir)
+  File "/Users/ousheshharadhun/Documents/Workspace/Impact_Nexus_AI/Impact_Nexus_Template/nlp_vevn/lib/python3.10/site-packages/haystack/nodes/base.py", line 46, in wrapper_exportable_to_yaml
+    init_func(self, *args, **kwargs)
+  File "/Users/ousheshharadhun/Documents/Workspace/Impact_Nexus_AI/Impact_Nexus_Template/nlp_vevn/lib/python3.10/site-packages/haystack/nodes/connector/crawler.py", line 100, in __init__
+    selenium_import.check()
+  File "/Users/ousheshharadhun/Documents/Workspace/Impact_Nexus_AI/Impact_Nexus_Template/nlp_vevn/lib/python3.10/site-packages/lazy_imports/try_import.py", line 107, in check
+    raise ImportError(message) from exc_value
+ImportError: Failed to import 'selenium'. Run 'pip install farm-haystack[crawler]'. Original error: No module named 'selenium'
+2023-12-12 07:48:53 - ERROR - Internal Server Error: /api/crawler/crawler
+2023-12-12 07:51:25 - WARNING - Not Found: /
+2023-12-12 07:51:25 - WARNING - Not Found: /
+2023-12-12 07:51:45 - INFO - Using devices: MPS - Number of GPUs: 1
+2023-12-12 07:51:45 - INFO - Scraping contents from 'https://remyx.ai/'
+2023-12-12 07:51:53 - INFO - Scraping contents from 'https://remyx.ai/index.html'
+2023-12-12 07:51:55 - INFO - Duplicate Documents: Document with id '987ba44c9d587ee39a18a2fb32c2ef98' already exists in index 'document'
+2023-12-12 07:51:55 - INFO - Duplicate Documents: Document with id '938907898e0fcdf5ec80056a62d3565c' already exists in index 'document'
+2023-12-12 07:51:55 - INFO - Using devices: MPS - Number of GPUs: 1
+2023-12-12 07:51:55 - INFO - Using devices: MPS - Number of GPUs: 1
+2023-12-12 07:51:56 - INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2-distilled' (Roberta)
+2023-12-12 07:51:58 - INFO - Auto-detected model language: english
+2023-12-12 07:51:58 - INFO - Loaded 'deepset/roberta-base-squad2-distilled' (Roberta model) from model hub.
+2023-12-12 07:52:01 - INFO - Using devices: MPS - Number of GPUs: 1
+2023-12-12 07:52:09 - ERROR - Error uploading logs to GCS: 404 GET https://storage.googleapis.com/storage/v1/b/logs_impact_nexus?projection=noAcl&prettyPrint=false: The specified bucket does not exist.
+2023-12-12 07:52:09 - ERROR - No answers and results found
+2023-12-12 07:57:31 - INFO - Using devices: MPS - Number of GPUs: 1
+2023-12-12 07:57:31 - INFO - Scraping contents from 'https://remyx.ai/'
+2023-12-12 07:57:39 - INFO - Scraping contents from 'https://remyx.ai/index.html'
+2023-12-12 07:57:40 - INFO - Duplicate Documents: Document with id '987ba44c9d587ee39a18a2fb32c2ef98' already exists in index 'document'
+2023-12-12 07:57:40 - INFO - Duplicate Documents: Document with id '938907898e0fcdf5ec80056a62d3565c' already exists in index 'document'
+2023-12-12 07:57:40 - INFO - Using devices: MPS - Number of GPUs: 1
+2023-12-12 07:57:40 - INFO - Using devices: MPS - Number of GPUs: 1
+2023-12-12 07:57:41 - INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2-distilled' (Roberta)
+2023-12-12 07:57:44 - INFO - Auto-detected model language: english
+2023-12-12 07:57:44 - INFO - Loaded 'deepset/roberta-base-squad2-distilled' (Roberta model) from model hub.
+2023-12-12 07:57:47 - INFO - Using devices: MPS - Number of GPUs: 1
+2023-12-12 07:57:53 - ERROR - Error uploading logs to GCS: 404 GET https://storage.googleapis.com/storage/v1/b/logs_impact_nexus?projection=noAcl&prettyPrint=false: The specified bucket does not exist.
+2023-12-12 07:57:53 - ERROR - No answers and results found

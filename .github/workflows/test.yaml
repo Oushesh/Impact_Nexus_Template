@@ -1,0 +1,19 @@
+name: auto-testing
+on:
+  push:
+    paths:
+      - 'Services/DVC/test/**'
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: docker://dvcorg/cml-py3:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: general-auto-test
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Your ML workflow goes here
+          pip3 install -r Services/DVC/test/requirements.txt
+          python3 Services/DVC/test/train.py
+          python3 Services/DVC/test/test.py
