@@ -46,8 +46,6 @@ install-dev:
     pip3 install farm-haystack && \
     pip3 install "farm-haystack[crawler]"
 
-
-
 install-common:
 	python3.10 -m venv common_venv && \
       . common_venv/bin/activate && \
@@ -107,13 +105,12 @@ install-opensearch:
 install-qdrant:
 	pip install qdrant-haystack
 
-
 install-weaviate:
 	docker run -d -p 8080:8080 --env AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED='true' --env PERSISTENCE_DATA_PATH='/var/lib/weaviate' semitechnologies/weaviate:1.17.2
 
-sync-models-gcp:
-   gsutil rsync -r models/ gs://dvc_models_bucket/
-
-sync-models-local:
 
 sync-logs:
+	gsutil -o "GSUtil:parallel_process_count=1" cp -r Services/services_app/logs/* gs://logs_impactnexus/
+
+
+
