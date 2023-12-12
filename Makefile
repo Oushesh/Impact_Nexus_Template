@@ -111,8 +111,9 @@ install-qdrant:
 install-weaviate:
 	docker run -d -p 8080:8080 --env AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED='true' --env PERSISTENCE_DATA_PATH='/var/lib/weaviate' semitechnologies/weaviate:1.17.2
 
-sync-models-local:
-
 sync-models-gcp:
+   gsutil rsync -r models/ gs://dvc_models_bucket/
+
+sync-models-local:
 
 sync-logs:
